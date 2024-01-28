@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            position: relative;
+        }
+
+        header {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        header img {
+            width: 100px; /* Ajuste conforme necessário */
+            height: auto;
+            border-radius: 50%;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .artwork {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .artwork img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .contact-btn {
+            background-color: #5c1cf1;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .order-form {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .order-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .order-form button {
+            background-color: #5c1cf1;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .whatsapp-link {
+            color: #25d366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #edsonMavie {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            color: #f11c1c;
+            font-size: 14px;
+        }
+    </style>
+    <title>Anastácia Simbine - Galeria de Arte</title>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo Anastácia Simbine">
+        <h1>Anastácia Simbine</h1>
+        <p>Sua Galeria de Arte Online</p>
+        <p>Slogan da galeria aqui</p>
+    </header>
+
+    <div class="gallery">
+        <div class="artwork">
+            <img src="obra1.jpg" alt="Obra 1">
+            <h2>Obra 1</h2>
+            <p>Valor: MZN 1.000,00</p>
+            <p>Código: ABC123</p>
+            <button class="contact-btn" onclick="openContactForm('Obra 1')">Contactar</button>
+        </div>
+
+        <div class="artwork">
+            <img src="obra2.jpg" alt="Obra 2">
+            <h2>Obra 2</h2>
+            <p>Valor: MZN 800,00</p>
+            <p>Código: XYZ456</p>
+            <button class="contact-btn" onclick="openContactForm('Obra 2')">Contactar</button>
+        </div>
+
+        <!-- Adicione mais obras conforme necessário -->
+
+    </div>
+
+    <div class="order-form">
+        <h2>Faça um Pedido de Desenho</h2>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="request">Pedido de Desenho:</label>
+            <textarea id="request" name="request" rows="4" required></textarea><br>
+
+            <button type="submit">Enviar Pedido</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Entre em contato para mais informações: 
+            <a class="whatsapp-link" href="https://api.whatsapp.com/send?phone=seunumerodewhatsapp" target="_blank">WhatsApp</a>
+        </p>
+        <!-- <p>&copy; 2024 Anastácia Simbine. Todos os direitos reservados.</p> -->
+    </footer>
+
+    <!-- Assinatura por Edson Mavie -->
+    <div id="edsonMavie">Por Edson Mavie</div>
+
+    <!-- Adicione o formulário de contato no final do corpo do HTML -->
+    <div id="contactForm" style="display: none;">
+        <h2>Formulário de Contato</h2>
+        <p>Informe seu nome, email e mensagem para requisitar a obra:</p>
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Adicione a função JavaScript para mostrar o formulário de contato -->
+    <script>
+        function openContactForm(artworkTitle) {
+            var contactForm = document.getElementById('contactForm');
+            contactForm.style.display = 'block';
+
+            // Preencha automaticamente o assunto do email com o título da obra
+            var messageInput = document.getElementById('message');
+            messageInput.value = "Estou interessado na obra: " + artworkTitle;
+        }
+    </script>
+
+</body>
+</html>
